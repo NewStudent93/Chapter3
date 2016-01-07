@@ -1,0 +1,32 @@
+﻿<Window x:Class="Chapter3.Default"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Chapter3"
+        mc:Ignorable="d"
+        Title="Default" Height="300" Width="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <Button Click="btnMatrixOperations_Click">Matrix Operations</Button>        
+        <Button Click="btnMatrixTransforms_Click" Grid.Row="1">Matrix Transforms</Button>
+        <Button Click="btnPerpendicularLine_Click" Grid.Row="2">Perpendicular Line</Button>
+        <Button Click="btnArrowLine_Click" Grid.Row="3">Line Arrow</Button>        
+        <Button Click="btnObjectMatrixTransforms_Click" Grid.Row="4">Object Matrix Transforms</Button>
+        <Button Click="btnScaleTransforms_Click" Grid.Row="5">Scale Transforms</Button>
+        <Button Click="btnTranslateTransforms_Click" Grid.Row="6">Translate Transforms</Button>
+        <Button Click="btnRotateTransfors_Click" Grid.Row="7">Rotate Transforms</Button>
+        
+
+    </Grid>
+</Window>
