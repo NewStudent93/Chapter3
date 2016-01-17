@@ -25,53 +25,56 @@ namespace Chapter3
 
             // Original matrix:
             Matrix m = new Matrix(1, 2, 3, 4, 0, 1);
-            tbOriginal.Text = "(" + m.ToString() + ")";
+            fillMatrix(m, OriginalMatrix);
+
             //Scale:
             m.Scale(1, 0.5);
-            tbScale.Text = "(" + m.ToString() + ")";
+            fillMatrix(m, Scale);
+
             // Scale - Prepend:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.ScalePrepend(1, 0.5);
-            tbScalePrepend.Text = "(" + m.ToString() + ")";
+            fillMatrix(m, ScalePrepend);
+
             //Translation:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.Translate(1, 0.5);
-            tbTranslate.Text = "(" + m.ToString() + ")";
+            fillMatrix(m,Translation);
+
             // Translation - Prepend:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.TranslatePrepend(1, 0.5);
-            tbTranslatePrepend.Text =
-            "(" + m.ToString() + ")";
+            fillMatrix(m,TranslationPrepend);
+
             //Rotation:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.Rotate(45);
-            tbRotate.Text = "(" + MatrixRound(m).ToString()
-            + ")";
+            fillMatrix(MatrixRound(m), Rotation);
+
             // Rotation - Prepend:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.RotatePrepend(45);
-            tbRotatePrepend.Text = "(" +
-            MatrixRound(m).ToString() + ")";
+            fillMatrix(MatrixRound(m), RotationPrepend);
+
             //Rotation at (x = 1, y = 2):
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.RotateAt(45, 1, 2);
-            tbRotateAt.Text = "(" +
-            MatrixRound(m).ToString() + ")";
+            fillMatrix(MatrixRound(m), RotationAt);
+
             // Rotation at (x = 1, y = 2) - Prepend:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.RotateAtPrepend(45, 1, 2);
-            tbRotateAtPrepend.Text = "(" +
-            MatrixRound(m).ToString() + ")";
+            fillMatrix(MatrixRound(m), RotationAtPrepend);
+
             // Skew:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.Skew(45, 30);
-            tbSkew.Text =
-            "(" + MatrixRound(m).ToString() + ")";
+            fillMatrix(MatrixRound(m), Skew);
+
             // Skew - Prepend:
             m = new Matrix(1, 2, 3, 4, 0, 1);
             m.SkewPrepend(45, 30);
-            tbSkewPrepend.Text =
-            "(" + MatrixRound(m).ToString() + ")";
+            fillMatrix(MatrixRound(m), SkewPrepend);
         }
         private Matrix MatrixRound(Matrix m)
         {
@@ -82,6 +85,19 @@ namespace Chapter3
             m.OffsetX = Math.Round(m.OffsetX, 3);
             m.OffsetY = Math.Round(m.OffsetY, 3);
             return m;
+        }
+
+        public void fillMatrix(Matrix mm, Panel p)
+        {
+            int i = 0;
+            string elements = mm.ToString();
+            string[] s = elements.Split(',');
+
+            foreach (var tb in p.Children.OfType<TextBlock>())
+            {
+                tb.Text = s[i];
+                i++;
+            }
         }
     }
 }

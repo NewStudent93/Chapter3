@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\App.xaml
-91907305221
+11694455111
 
-13-537311913
+15812429084
 13738642453
-Default.xaml;LineArrow.xaml;MatrixOperations.xaml;MatrixTransforms.xaml;ObjectMatrixTransform.xaml;PerpendicularLine.xaml;RotateTransforms.xaml;ScaleTransforms.xaml;TranslateTransforms.xaml;
+CombineTransforms.xaml;Default.xaml;LineArrow.xaml;MatrixOperations.xaml;MatrixTransforms.xaml;ObjectMatrixTransform.xaml;PerpendicularLine.xaml;RotateTransforms.xaml;ScaleTransforms.xaml;SkewTransforms.xaml;TranslateTransforms.xaml;
 
 False
 

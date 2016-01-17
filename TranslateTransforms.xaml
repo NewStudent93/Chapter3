@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chapter3"
         mc:Ignorable="d"
-        Title="TranslateTransforms" Height="330" Width="480">
+        Title="TranslateTransforms" Height="350" Width="480">
     <Viewbox Stretch="Uniform">
-        <Grid Width="525" Height="330" HorizontalAlignment="Left" VerticalAlignment="Top" ShowGridLines="True">
+        <Grid Width="525" Height="350" HorizontalAlignment="Left" VerticalAlignment="Top" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="260" />
                 <ColumnDefinition Width="260" />
@@ -52,7 +52,7 @@
                            TextWrapping="Wrap"
                            FontSize="14" FontWeight="Bold"
                            Text="Interactive Translation"/>
-                <Grid Width="260" Height="26"
+                <Grid Width="260" Height="32"
                       HorizontalAlignment="Left"
                       VerticalAlignment="Top">
                     <Grid.ColumnDefinitions>
@@ -61,13 +61,13 @@
                         <ColumnDefinition Width="70" />
                         <ColumnDefinition Width="50" />
                     </Grid.ColumnDefinitions>
-                    <TextBlock Margin="2,2,10,2"
+                    <TextBlock Margin="2,7,10,2"
                                TextAlignment="Right"
                                Text="X"/>
                     <TextBox Name="tbX" Width="50"
                              Height="20" Grid.Column="1"
                              TextAlignment="Center" Text="1"/>
-                    <TextBlock Margin="2,2,10,2"
+                    <TextBlock Margin="2,7,10,2"
                                Grid.Column="2"
                                TextAlignment="Right"
                                Text="Y"/>

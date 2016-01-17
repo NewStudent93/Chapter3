@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chapter3"
         mc:Ignorable="d"
-        Title="Default" Height="300" Width="300">
+        Title="Default" Height="650" Width="650" ResizeMode="CanMinimize">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="210"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -16,17 +20,47 @@
             <RowDefinition/>
             <RowDefinition/>
             <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
         </Grid.RowDefinitions>
+
+        <Border BorderBrush="Gray" BorderThickness="0,0,1,1">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Click the button to view the example</TextBlock>
+         </Border>
+        <Border BorderThickness="0,0,0,1" BorderBrush="Gray" Grid.Column="1">
+            <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center">Example description</TextBlock>
+       </Border>
         
-        <Button Click="btnMatrixOperations_Click">Matrix Operations</Button>        
-        <Button Click="btnMatrixTransforms_Click" Grid.Row="1">Matrix Transforms</Button>
-        <Button Click="btnPerpendicularLine_Click" Grid.Row="2">Perpendicular Line</Button>
-        <Button Click="btnArrowLine_Click" Grid.Row="3">Line Arrow</Button>        
-        <Button Click="btnObjectMatrixTransforms_Click" Grid.Row="4">Object Matrix Transforms</Button>
-        <Button Click="btnScaleTransforms_Click" Grid.Row="5">Scale Transforms</Button>
-        <Button Click="btnTranslateTransforms_Click" Grid.Row="6">Translate Transforms</Button>
-        <Button Click="btnRotateTransfors_Click" Grid.Row="7">Rotate Transforms</Button>
+        <Button Click="btnMatrixOperations_Click" Grid.Row="1">Matrix Operations</Button>
+        <TextBlock Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows the results of matrix operations for given matrices</TextBlock>
         
+        <Button Click="btnMatrixTransforms_Click" Grid.Row="2">Matrix Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows the results of matrix transformations for given matrix</TextBlock>
+        
+        <Button Click="btnPerpendicularLine_Click" Grid.Row="3">Perpendicular Line</Button>
+        <TextBlock Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Finds a perpendicular line for a given line segment, allowing the user to change the given values for endpoint positions of the line segment and the length of the perpendicular line</TextBlock>
+        
+        <Button Click="btnArrowLine_Click" Grid.Row="4">Line Arrow</Button>
+        <TextBlock Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Creating an arrow of given line segment, allowing the user to change the given values for endpoint positions of the line segment and the size od the arrow</TextBlock>
+        
+        <Button Click="btnObjectMatrixTransforms_Click" Grid.Row="5">Object Matrix Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Rectangle transform using transform matrix with user-entered values for the matrix elements</TextBlock>
+        
+        <Button Click="btnScaleTransforms_Click" Grid.Row="6">Scale Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="6" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows a rectangle scale animation and interactive rectangle scaling which allows the user to set the ScaleX and ScaleY properties</TextBlock>
+        
+        <Button Click="btnTranslateTransforms_Click" Grid.Row="7">Translate Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="7" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows a rectangle translate animation and interactive rectangle translation which allows the user to set X and Y properties</TextBlock>
+        
+        <Button Click="btnRotateTransfors_Click" Grid.Row="8">Rotate Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="8" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows a rectangle rotation animation and interactive rectangle rotation which allows the user to set the X and Y properties and the rotation angle</TextBlock>
+                
+        <Button Click="btnSkewTransforms_Click" Grid.Row="9">Skew Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="9" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows a rectangle skew animation and interactive rectangle skew transformation which allows the user to set the X and Y angle</TextBlock>
+        
+        <Button Click="btnCombineTransforms_Click" Grid.Row="10">Combine Transforms</Button>
+        <TextBlock Grid.Column="1" Grid.Row="10" VerticalAlignment="Center" TextWrapping="Wrap" Margin="10,5,10,5">Shows the result of combining more transformations on a square</TextBlock>
 
     </Grid>
 </Window>

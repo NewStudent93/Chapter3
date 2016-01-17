@@ -34,7 +34,7 @@
                 <TextBox Name="tbX2" Grid.Column="1" Grid.Row="2" TextAlignment="Center">150</TextBox>
                 <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="3" Margin="5,5,10,5">Y2</TextBlock>
                 <TextBox Name="tbY2" Grid.Column="1" Grid.Row="3" TextAlignment="Center">100</TextBox>
-                <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" Margin="5,5,10,5">Length</TextBlock>
+                <TextBlock HorizontalAlignment="Right" Grid.Column="0" Grid.Row="4" Margin="5,5,10,5">Size</TextBlock>
                 <TextBox Name="tbLength" Grid.Column="1" Grid.Row="4" TextAlignment="Center">100</TextBox>
                 <Button Click="BtnApply_Click" Margin="15,20,15,5" Grid.Row="5" Height="25" Grid.ColumnSpan="2" Grid.Column="0">Apply</Button>
                 <Button Click="BtnClose_Click" Margin="15,0,15,5" Grid.Row="6" Height="25" Grid.ColumnSpan="2" Grid.Column="0">Close</Button>

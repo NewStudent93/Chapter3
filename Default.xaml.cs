@@ -79,5 +79,17 @@ namespace Chapter3
             RT.Show();
     //        this.Close();
         }
+
+        public void btnSkewTransforms_Click(object sender, RoutedEventArgs e)
+        {
+            SkewTransforms ST = new SkewTransforms();
+            ST.Show();
+        }
+
+        public void btnCombineTransforms_Click(object sender, RoutedEventArgs e)
+        {
+            CombineTransforms CT = new CombineTransforms();
+            CT.Show();
+        }
     }
 }

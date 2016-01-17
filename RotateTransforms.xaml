@@ -14,10 +14,11 @@
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Column="0">
                 <TextBlock HorizontalAlignment="Center" Margin="10,10,10,0" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Text="Rotation Animation"/>
-                <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Height="46" Text="The rotation angle is animated from 0 to 360, and the center property is animated from (-20,-50) to (120,90)"/>
+                <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Height="46" Text="The rotation angle is animated from 0 to 360, and the center property can be set by click"/>
                 <Border Margin="10" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left">
-                    <Canvas ClipToBounds="True" Width="240" Height="250">
-                        <Rectangle Canvas.Left="100" 
+                    <Canvas x:Name="canvas1" Background="Transparent" ClipToBounds="True" Width="240" Height="250" MouseLeftButtonDown="canvas1_OnMouseLeftButtonDown">
+                        <Rectangle x:Name="rect" 
+                                   Canvas.Left="100" 
                                    Canvas.Top="80"
                                    Width="50" Height="70"
                                    Fill="LightCoral"
@@ -36,12 +37,12 @@
                                         <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="Angle"
                                                          From="0" To="360" Duration="0:0:5"/>
-                                        <DoubleAnimation Storyboard.TargetName="rotate"
+                                  <!--      <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="CenterX"
                                                          From="-20" To="120" Duration="0:0:5"/>
                                         <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="CenterY"
-                                                         From="-50" To="90" Duration="0:0:5"/>
+                                                         From="-50" To="90" Duration="0:0:5"/> -->
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger>

@@ -6,30 +6,166 @@
         xmlns:local="clr-namespace:Chapter3"
         mc:Ignorable="d"
         Title="MatrixTransforms" Height="470" Width="270">
-    <StackPanel>
+    <Grid>
+        <ScrollViewer>
+        <StackPanel>
 
-        <TextBlock Margin="10,10,5,5" Text="Original Matrix:"/>
-        <TextBlock Name="tbOriginal" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Scale:"/>
-        <TextBlock Name="tbScale" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Scale - Prepend:"/>
-        <TextBlock Name="tbScalePrepend" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Translation:"/>
-        <TextBlock Name="tbTranslate" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Translation – Prepend:"/>
-        <TextBlock Name="tbTranslatePrepend" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Rotation:"/>
-        <TextBlock Name="tbRotate" Margin="20,0,5,5" TextWrapping="Wrap"/>
-        <TextBlock Margin="10,0,5,5" Text="Rotation – Prepend:"/>
-        <TextBlock Name="tbRotatePrepend" Margin="20,0,5,5" TextWrapping="Wrap"/>
-        <TextBlock Margin="10,0,5,5" Text="RotationAt:"/>
-        <TextBlock x:Name="tbRotateAt" Margin="20,0,5,5" TextWrapping="Wrap"/>
-        <TextBlock Margin="10,0,5,5" Text="RotationAt – Prepend:"/>
-        <TextBlock x:Name="tbRotateAtPrepend" Margin="20,0,5,5" TextWrapping="Wrap"/>
-        <TextBlock Margin="10,0,5,5" Text="Skew:"/>
-        <TextBlock Name="tbSkew" Margin="20,0,5,5"/>
-        <TextBlock Margin="10,0,5,5" Text="Skew - Prepend:"/>
-        <TextBlock Name="tbSkewPrepend" Margin="20,0,5,5"/>
+            <TextBlock Margin="10,10,5,5" Text="Original Matrix:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="OriginalMatrix" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
 
-    </StackPanel>
+            <TextBlock Margin="10,20,5,5" Text="Scale:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="Scale" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Scale - Prepend:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="ScalePrepend" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Translation:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="Translation" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Translation – Prepend:"/>
+
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="TranslationPrepend" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Rotation:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="Rotation" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Rotation – Prepend:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="RotationPrepend" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="RotationAt:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="RotationAt" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="RotationAt – Prepend:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="RotationAtPrepend" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Skew:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="Skew" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="Skew - Prepend:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="SkewPrepend" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+        </StackPanel>
+        </ScrollViewer>
+    </Grid>
 </Window>

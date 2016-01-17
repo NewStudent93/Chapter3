@@ -28,3 +28,7 @@ C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\RotateTransforms.baml
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\Default.g.cs
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\Default.baml
+C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\SkewTransforms.g.cs
+C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\SkewTransforms.baml
+C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\CombineTransforms.g.cs
+C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\CombineTransforms.baml

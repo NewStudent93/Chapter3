@@ -5,21 +5,94 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chapter3"
         mc:Ignorable="d"
-        Title="MatrixOperations" Height="260" Width="250">
+        Title="MatrixOperations" Height="300" Width="300">
     <Grid>
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
 
         <StackPanel>
             <TextBlock Margin="10,10,5,5" Text="Original Matrix:"/>
-            <TextBlock x:Name="tbOriginal" Margin="20,0,5,5"/>
-            <TextBlock Margin="10,0,5,5" Text="Inverted Matrix:"/>
-            <TextBlock x:Name="tbInvert" Margin="20,0,5,5"/>
-            <TextBlock Margin="10,0,5,5" Text="Original Matrices:"/>
-            <TextBlock x:Name="tbM1M2" Margin="20,0,5,5"/>
-            <TextBlock Margin="10,0,5,5" Text="M1 x M2:"/>
-            <TextBlock x:Name="tbM12" Margin="20,0,5,5"/>
-            <TextBlock Margin="10,0,5,5" Text="M2 x M1:"/>
-            <TextBlock x:Name="tbM21" Margin="20,0,5,5"/>
-        </StackPanel>
+            <StackPanel x:Name="sp1" Orientation="Horizontal" Margin="15,5">
+                <Path x:Name="path1" Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="OriginalMatrix" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path x:Name="path2" Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+            
+            <TextBlock Margin="10,20,5,5" Text="Inverted Matrix:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="InvertedMarix" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
 
+            <TextBlock Margin="10,20,5,5" Text="Original Matrices:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,5,0">M1 = </TextBlock>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="OriginalMatrix1" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Margin="15,0,5,0">M2 = </TextBlock>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="OriginalMatrix2" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+            
+            <TextBlock Margin="10,20,5,5" Text="M1 x M2:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="m1xm2" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+
+            <TextBlock Margin="10,20,5,5" Text="M2 x M1:"/>
+            <StackPanel Orientation="Horizontal" Margin="15,5">
+                <Path Stroke="Black" StrokeThickness="1" Data="M 10,0 0,0 0,60 10,60" VerticalAlignment="Stretch" HorizontalAlignment="Center"/>
+                <UniformGrid x:Name="m2xm1" Columns="2" Rows="3">
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                    <TextBlock Margin="0,0,0,5"/>
+                    <TextBlock Margin="10,0,0,5"/>
+                </UniformGrid>
+                <Path Stroke="Black" StrokeThickness="1" Data="M 0,0 10,0 10,60 0,60"/>
+            </StackPanel>
+            
+        </StackPanel>
+</ScrollViewer>
     </Grid>
 </Window>
