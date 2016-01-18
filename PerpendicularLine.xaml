@@ -4,8 +4,12 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chapter3"
+        xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan"
         mc:Ignorable="d"
-        Title="PerpendicularLine" Height="300" Width="400">
+        Title="PerpendicularLine" Height="300" Width="400"
+        FocusManager.FocusedElement="{Binding ElementName=scroller}"
+        >
+    
     <Viewbox Stretch="Uniform">
         <Grid Width="430" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -39,12 +43,36 @@
                 <Button Click="BtnApply_Click" Margin="15,20,15,5" Grid.Row="5" Height="25" Grid.ColumnSpan="2" Grid.Column="0">Apply</Button>
                 <Button Click="BtnClose_Click" Margin="15,0,15,5" Grid.Row="6" Height="25" Grid.ColumnSpan="2" Grid.Column="0">Close</Button>
             </Grid>
-            <Canvas Name="canvas1" Grid.Column="1" Margin="10" ClipToBounds="True" Width="270" Height="280">
+
+            <ScrollViewer
+                x:Name="scroller"
+                CanContentScroll="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Grid.Column="1"
+                >
+            <ZoomAndPan:ZoomAndPanControl
+                x:Name="zoomAndPanControl"
+                Background="LightGray"
+                MouseDown="zoomAndPanControl_MouseDown"
+                MouseUp="zoomAndPanControl_MouseUp"
+	            MouseMove="zoomAndPanControl_MouseMove"
+	            MouseWheel="zoomAndPanControl_MouseWheel"
+                MouseDoubleClick="zoomAndPanControl_MouseDoubleClick"
+                >
+            <Canvas Name="canvas1" 
+                    ClipToBounds="True" 
+                    Width="270" 
+                    Height="280"
+                    Background="White"
+                    >
                 <TextBlock Name="tbPoint1" Canvas.Top="10">Point1</TextBlock>
                 <TextBlock Name="tbPoint2" Canvas.Top="25">Point2</TextBlock>
                 <TextBlock Name="tbPoint3" Canvas.Top="40">Point3</TextBlock>
                 <TextBlock Name="tbPoint4" Canvas.Top="55">Point4</TextBlock>
             </Canvas>
+            </ZoomAndPan:ZoomAndPanControl>
+            </ScrollViewer>
         </Grid>
     </Viewbox>
 

@@ -19,6 +19,32 @@ namespace Chapter3
     /// </summary>
     public partial class PerpendicularLine : Window
     {
+
+        public enum MouseHandlingMode
+        {
+            // The user is left-dragging rectangles with the mouse
+            None,
+
+            // The user is left-mouse-button-dragging to pan the viewport
+            Panning,
+
+            // The user is holding down shift and left-clicking or right-clicking to zoom in or out
+            Zooming,
+        }
+
+        // Specifies the current state of the mouse handling logic
+        private MouseHandlingMode mouseHandlingMode = MouseHandlingMode.None;
+
+        // The point that was clicked relative to the ZoomAndPanControl
+        private Point origZoomAndPanControlMouseDownPoint;
+
+        /// The point that was clicked relative to the content that is contained within the ZoomAndPanControl.
+        /// </summary>
+        private Point origContentMouseDownPoint;
+
+        // Records which mouse button clicked during mouse dragging
+        private MouseButton mouseButtonDown;
+
         private Line line1;
         private Line line2;
         public PerpendicularLine()
@@ -101,5 +127,114 @@ namespace Chapter3
         {
             this.Close();
         }
+
+        // Event raised on mouse down in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            canvas1.Focus();
+            Keyboard.Focus(canvas1);
+
+            mouseButtonDown = e.ChangedButton;
+            origZoomAndPanControlMouseDownPoint = e.GetPosition(zoomAndPanControl);
+            origContentMouseDownPoint = e.GetPosition(canvas1);
+
+            if ((Keyboard.Modifiers & ModifierKeys.Shift) != 0 &&
+                (e.ChangedButton == MouseButton.Left ||
+                 e.ChangedButton == MouseButton.Right))
+            {
+                // Shift + left- or right-down initiates zooming mode.
+                mouseHandlingMode = MouseHandlingMode.Zooming;
+            }
+            else if (mouseButtonDown == MouseButton.Left)
+            {
+                // Just a plain old left-down initiates panning mode.
+                mouseHandlingMode = MouseHandlingMode.Panning;
+            }
+
+            if (mouseHandlingMode != MouseHandlingMode.None)
+            {
+                // Capture the mouse so that we eventually receive the mouse up event.
+                zoomAndPanControl.CaptureMouse();
+                e.Handled = true;
+            }
+        }
+
+        // Event raised on mouse up in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            if (mouseHandlingMode != MouseHandlingMode.None)
+            {
+                if (mouseHandlingMode == MouseHandlingMode.Zooming)
+                {
+                    if (mouseButtonDown == MouseButton.Left)
+                    {
+                        // Shift + left-click zooms in on the content.
+                        ZoomIn();
+                    }
+                    else if (mouseButtonDown == MouseButton.Right)
+                    {
+                        // Shift + left-click zooms out from the content.
+                        ZoomOut();
+                    }
+                }
+
+                zoomAndPanControl.ReleaseMouseCapture();
+                mouseHandlingMode = MouseHandlingMode.None;
+                e.Handled = true;
+            }
+        }
+
+        // Event raised on mouse move in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (mouseHandlingMode == MouseHandlingMode.Panning)
+            {
+                //
+                // The user is left-dragging the mouse.
+                // Pan the viewport by the appropriate amount.
+                //
+                Point curContentMousePoint = e.GetPosition(canvas1);
+                Vector dragOffset = curContentMousePoint - origContentMouseDownPoint;
+
+                zoomAndPanControl.ContentOffsetX -= dragOffset.X;
+                zoomAndPanControl.ContentOffsetY -= dragOffset.Y;
+
+                e.Handled = true;
+            }
+        }
+
+        // Event raised by rotating the mouse wheel
+        private void zoomAndPanControl_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            e.Handled = true;
+
+            if (e.Delta > 0)
+            {
+                ZoomIn();
+            }
+            else if (e.Delta < 0)
+            {
+                ZoomOut();
+            }
+        }
+
+        // Zoom the viewport out by a small increment
+        private void ZoomOut()
+        {
+            zoomAndPanControl.ContentScale -= 0.1;
+        }
+
+        // Zoom the viewport in by a small increment
+        private void ZoomIn()
+        {
+            zoomAndPanControl.ContentScale += 0.1;
+        }
+
+
+        private void zoomAndPanControl_MouseDoubleClick(object sender, RoutedEventArgs e)
+        {
+
+        }
+
     }
 }
