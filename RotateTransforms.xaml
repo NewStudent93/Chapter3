@@ -21,18 +21,18 @@
                 x:Name="scroller"
                 CanContentScroll="True"
                 VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Visible"
                 Grid.Column="1"
                 >
                         <ZoomAndPan:ZoomAndPanControl
                 x:Name="zoomAndPanControl"
-                Background="LightGray"
+                Background="White"
                 MouseDown="zoomAndPanControl_MouseDown"
                 MouseUp="zoomAndPanControl_MouseUp"
 	            MouseMove="zoomAndPanControl_MouseMove"
 	            MouseWheel="zoomAndPanControl_MouseWheel">
                             <Canvas x:Name="canvas1" Background="White" 
-                                    ClipToBounds="True" 
+                                    ClipToBounds="False" 
                                     Width="240" Height="250" 
                                     MouseLeftButtonDown = "canvas1_OnMouseLeftButtonDown">
                                 <Rectangle x:Name="rect" 
@@ -116,7 +116,7 @@
                 x:Name="scroller1"
                 CanContentScroll="True"
                 VerticalScrollBarVisibility="Auto"
-                HorizontalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Visible"
                 Grid.Column="1"
                 >
                         <ZoomAndPan:ZoomAndPanControl
