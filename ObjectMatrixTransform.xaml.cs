@@ -38,6 +38,31 @@ namespace Chapter3
         {
             this.Close();
         }
-    
+
+        // Event raised on mouse down in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ZoomAndPanEvents.MouseDown(sender, e, canvas1, zoomAndPanControl);
+        }
+
+        // Event raised on mouse up in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ZoomAndPanEvents.MouseUp(sender, e, zoomAndPanControl);
+        }
+
+        // Event raised on mouse move in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ZoomAndPanEvents.MouseMove(sender, e, canvas1, zoomAndPanControl);
+
+        }
+
+        // Event raised by rotating the mouse wheel
+        private void zoomAndPanControl_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ZoomAndPanEvents.MouseWheel(sender, e, zoomAndPanControl,canvas1);
+        }
+
     }
 }

@@ -4,10 +4,11 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Chapter3"
+        xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan"
         mc:Ignorable="d"
-        Title="RotateTransforms" Height="350" Width="480">
+        Title="RotateTransforms" Height="380" Width="480">
     <Viewbox Stretch="Uniform">
-        <Grid Width="525" Height="350" HorizontalAlignment="Left" VerticalAlignment="Top" ShowGridLines="True">
+        <Grid Width="525" Height="380" HorizontalAlignment="Left" VerticalAlignment="Top" ShowGridLines="True">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="260" />
                 <ColumnDefinition Width="260" />
@@ -16,8 +17,25 @@
                 <TextBlock HorizontalAlignment="Center" Margin="10,10,10,0" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Text="Rotation Animation"/>
                 <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Height="46" Text="The rotation angle is animated from 0 to 360, and the center property can be set by click"/>
                 <Border Margin="10" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left">
-                    <Canvas x:Name="canvas1" Background="Transparent" ClipToBounds="True" Width="240" Height="250" MouseLeftButtonDown="canvas1_OnMouseLeftButtonDown">
-                        <Rectangle x:Name="rect" 
+                    <ScrollViewer
+                x:Name="scroller"
+                CanContentScroll="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Grid.Column="1"
+                >
+                        <ZoomAndPan:ZoomAndPanControl
+                x:Name="zoomAndPanControl"
+                Background="LightGray"
+                MouseDown="zoomAndPanControl_MouseDown"
+                MouseUp="zoomAndPanControl_MouseUp"
+	            MouseMove="zoomAndPanControl_MouseMove"
+	            MouseWheel="zoomAndPanControl_MouseWheel">
+                            <Canvas x:Name="canvas1" Background="White" 
+                                    ClipToBounds="True" 
+                                    Width="240" Height="250" 
+                                    MouseLeftButtonDown = "canvas1_OnMouseLeftButtonDown">
+                                <Rectangle x:Name="rect" 
                                    Canvas.Left="100" 
                                    Canvas.Top="80"
                                    Width="50" Height="70"
@@ -25,29 +43,31 @@
                                    Opacity="0.5"
                                    Stroke="Black"
                                    StrokeThickness="2">
-                            <Rectangle.RenderTransform>
-                                <RotateTransform x:Name="rotate"/>
-                            </Rectangle.RenderTransform>
-                        </Rectangle>
-                        <!-- Animate the rectangle: -->
-                        <Canvas.Triggers>
-                            <EventTrigger RoutedEvent="Canvas.Loaded">
-                                <BeginStoryboard>
-                                    <Storyboard RepeatBehavior="Forever">
-                                        <DoubleAnimation Storyboard.TargetName="rotate"
+                                    <Rectangle.RenderTransform>
+                                        <RotateTransform x:Name="rotate"/>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                                <!-- Animate the rectangle: -->
+                                <Canvas.Triggers>
+                                    <EventTrigger RoutedEvent="Canvas.Loaded">
+                                        <BeginStoryboard>
+                                            <Storyboard RepeatBehavior="Forever">
+                                                <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="Angle"
                                                          From="0" To="360" Duration="0:0:5"/>
-                                  <!--      <DoubleAnimation Storyboard.TargetName="rotate"
+                                                <!--      <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="CenterX"
                                                          From="-20" To="120" Duration="0:0:5"/>
                                         <DoubleAnimation Storyboard.TargetName="rotate"
                                                          Storyboard.TargetProperty="CenterY"
                                                          From="-50" To="90" Duration="0:0:5"/> -->
-                                    </Storyboard>
-                                </BeginStoryboard>
-                            </EventTrigger>
-                        </Canvas.Triggers>
-                    </Canvas>
+                                            </Storyboard>
+                                        </BeginStoryboard>
+                                    </EventTrigger>
+                                </Canvas.Triggers>
+                            </Canvas>
+                        </ZoomAndPan:ZoomAndPanControl>
+                    </ScrollViewer>
                 </Border>
             </StackPanel>
             <StackPanel Grid.Column="1">
@@ -92,33 +112,50 @@
                         BorderThickness="1"
                         
                         HorizontalAlignment="Left">
-                    <Canvas ClipToBounds="True"
-                            Width="240" Height="250">
-                        <TextBlock Canvas.Left="90"
+                    <ScrollViewer
+                x:Name="scroller1"
+                CanContentScroll="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Grid.Column="1"
+                >
+                        <ZoomAndPan:ZoomAndPanControl
+                x:Name="zoomAndPanControl1"
+                Background="LightGray"
+                MouseDown="zoomAndPanControl1_MouseDown"
+                MouseUp="zoomAndPanControl1_MouseUp"
+	            MouseMove="zoomAndPanControl1_MouseMove"
+	            MouseWheel="zoomAndPanControl1_MouseWheel">
+                            <Canvas x:Name="canvas2" ClipToBounds="True"
+                            Width="240" Height="250"
+                                    Background="White">
+                                <TextBlock Canvas.Left="90"
                                    Canvas.Top="63"
                                    Text="Original shape"/>
-                        <Rectangle Canvas.Top="80"
+                                <Rectangle Canvas.Top="80"
                                    Canvas.Left="100"
                                    Width="50" Height="70"
                                    Stroke="Black"
                                    StrokeThickness="1"
                                    StrokeDashArray="3,1"/>
-                        <Rectangle Canvas.Top="80"
+                                <Rectangle Canvas.Top="80"
                                    Canvas.Left="100"
                                    Width="50" Height="70"
                                    Fill="LightCoral"
                                    Opacity="0.5"
                                    Stroke="Black"
                                    StrokeThickness="2">
-                            <!-- Set interactive rotation: -->
-                            <Rectangle.RenderTransform>
-                                <RotateTransform
+                                    <!-- Set interactive rotation: -->
+                                    <Rectangle.RenderTransform>
+                                        <RotateTransform
                                     CenterX="{Binding ElementName=tbCenterX,Path=Text}"
                                     CenterY="{Binding ElementName=tbCenterY,Path=Text}"
                                     Angle="{Binding ElementName=tbAngle,Path=Text}"/>
-                            </Rectangle.RenderTransform>
-                        </Rectangle>
-                    </Canvas>
+                                    </Rectangle.RenderTransform>
+                                </Rectangle>
+                            </Canvas>
+                        </ZoomAndPan:ZoomAndPanControl>
+                    </ScrollViewer>
                 </Border>
             </StackPanel>
         </Grid>

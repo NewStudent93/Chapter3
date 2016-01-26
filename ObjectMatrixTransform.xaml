@@ -3,9 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+         xmlns:ZoomAndPan="clr-namespace:ZoomAndPan;assembly=ZoomAndPan"
         xmlns:local="clr-namespace:Chapter3"
         mc:Ignorable="d"
-        Title="ObjectMatrixTransform" Height="300" Width="400">
+        Title="ObjectMatrixTransform" Height="300" Width="400"
+        
+        >
     <Viewbox Stretch="Uniform">
         <Grid Width="430" Height="300" HorizontalAlignment="Left" VerticalAlignment="Top">
             <Grid.ColumnDefinitions>
@@ -48,32 +51,50 @@
                         Height="25" Grid.ColumnSpan="2"
                         Grid.Column="0">Close</Button>
             </Grid>
-            <Border Margin="10" Grid.Column="1"
+            <Border Grid.Column="1"
                     BorderBrush="Black"
                     BorderThickness="1"
                     HorizontalAlignment="Left"
                     >
-                <Canvas Name="canvas1" Grid.Column="1"
-                        ClipToBounds="True" Width="270" Height="280">
-                    <TextBlock Canvas.Top="53" Canvas.Left="90"> Original shape</TextBlock>
-                    <Rectangle Canvas.Top="70"
+                <ScrollViewer
+                x:Name="scroller"
+                CanContentScroll="True"
+                VerticalScrollBarVisibility="Auto"
+                HorizontalScrollBarVisibility="Auto"
+                Grid.Column="1"
+                >
+                    <ZoomAndPan:ZoomAndPanControl
+                x:Name="zoomAndPanControl"
+                Background="LightGray"
+                MouseDown="zoomAndPanControl_MouseDown"
+                MouseUp="zoomAndPanControl_MouseUp"
+	            MouseMove="zoomAndPanControl_MouseMove"
+	            MouseWheel="zoomAndPanControl_MouseWheel">
+
+                        <Canvas Name="canvas1" Grid.Column="1"
+                        ClipToBounds="True" Width="270" Height="280" Background="White">
+                            <TextBlock Canvas.Top="53" Canvas.Left="90"> Original shape</TextBlock>
+                            <Rectangle Canvas.Top="70"
                                Canvas.Left="100"
                                Width="50" Height="70"
                                Stroke="Black"
                                StrokeThickness="2"
                                StrokeDashArray="3,1"/>
-                    <Rectangle Name="rect" Canvas.Top="70"
+                            <Rectangle Name="rect" Canvas.Top="70"
                                Canvas.Left="100"
                                Width="50" Height="70"
                                Fill="LightCoral" Opacity="0.5"
                                Stroke="Black"
                                StrokeThickness="2">
-                        <Rectangle.RenderTransform>
-                            <MatrixTransform x:Name="matrixTransform"/>
-                        </Rectangle.RenderTransform>
-                    </Rectangle>
-                </Canvas>
+                                <Rectangle.RenderTransform>
+                                    <MatrixTransform x:Name="matrixTransform"/>
+                                </Rectangle.RenderTransform>
+                            </Rectangle>
+                        </Canvas>
+                    </ZoomAndPan:ZoomAndPanControl>
+                </ScrollViewer>
             </Border>
+                    
         </Grid>
     </Viewbox>
 </Window>

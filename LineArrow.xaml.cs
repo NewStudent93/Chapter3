@@ -69,6 +69,7 @@ namespace Chapter3
             line2 = new Line();
             line2.Stroke = Brushes.Gray;
             line2.StrokeThickness = 4;
+            line2.StrokeEndLineCap = PenLineCap.Square;
         //    line2.StrokeDashArray = DoubleCollection.Parse("3, 1");
             pt3 = pt2 + v1 * m1;
             m1 = new Matrix();
@@ -83,6 +84,7 @@ namespace Chapter3
             line3 = new Line();
             line3.Stroke = Brushes.Gray;
             line3.StrokeThickness = 4;
+            line3.StrokeStartLineCap = PenLineCap.Square;
             line3.X1 = pt2.X;
             line3.Y1 = pt2.Y;
             line3.X2 = pt4.X;
@@ -114,6 +116,32 @@ namespace Chapter3
         {
             this.Close();
         }
-    
+
+        // Event raised on mouse down in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseDown(object sender, MouseButtonEventArgs e)
+        {
+            ZoomAndPanEvents.MouseDown(sender, e, canvas1, zoomAndPanControl);
+        }
+
+        // Event raised on mouse up in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseUp(object sender, MouseButtonEventArgs e)
+        {
+            ZoomAndPanEvents.MouseUp(sender, e, zoomAndPanControl);
+        }
+
+        // Event raised on mouse move in the ZoomAndPanControl
+        private void zoomAndPanControl_MouseMove(object sender, MouseEventArgs e)
+        {
+            ZoomAndPanEvents.MouseMove(sender, e, canvas1, zoomAndPanControl);
+
+        }
+
+        // Event raised by rotating the mouse wheel
+        private void zoomAndPanControl_MouseWheel(object sender, MouseWheelEventArgs e)
+        {
+            ZoomAndPanEvents.MouseWheel(sender, e, zoomAndPanControl,canvas1);
+        }
+
+
     }
 }

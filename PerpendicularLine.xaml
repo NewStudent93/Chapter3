@@ -60,17 +60,49 @@
 	            MouseWheel="zoomAndPanControl_MouseWheel"
                 MouseDoubleClick="zoomAndPanControl_MouseDoubleClick"
                 >
-            <Canvas Name="canvas1" 
-                    ClipToBounds="True" 
-                    Width="270" 
-                    Height="280"
-                    Background="White"
-                    >
-                <TextBlock Name="tbPoint1" Canvas.Top="10">Point1</TextBlock>
-                <TextBlock Name="tbPoint2" Canvas.Top="25">Point2</TextBlock>
-                <TextBlock Name="tbPoint3" Canvas.Top="40">Point3</TextBlock>
-                <TextBlock Name="tbPoint4" Canvas.Top="55">Point4</TextBlock>
-            </Canvas>
+                    <Canvas Name="coordinateCanvas"
+                            ClipToBounds="True"
+                            Width="2000" 
+                            Height="2000"
+                            Background="White">
+                        <Canvas Name="canvas1" 
+                                ClipToBounds="True" 
+                                Background="Transparent"
+                                Width="270"
+                                Height="280"
+                                Canvas.Left="1000"
+                                Canvas.Top="1000"
+                                Loaded="canvas1_Loaded">
+
+                            <Canvas.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleY="-1"/>
+                                    <TranslateTransform Y="260"/>
+                                </TransformGroup>
+                            </Canvas.RenderTransform>
+                            <TextBlock Name="tbPoint1" Canvas.Top="10">Point1
+                                <TextBlock.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </TextBlock.RenderTransform>
+                            </TextBlock>
+                <TextBlock Name="tbPoint2" Canvas.Top="25">Point2
+                                <TextBlock.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock Name="tbPoint3" Canvas.Top="40">Point3
+                                <TextBlock.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </TextBlock.RenderTransform>
+                </TextBlock>
+                <TextBlock Name="tbPoint4" Canvas.Top="55">Point4
+                                <TextBlock.RenderTransform>
+                                    <ScaleTransform ScaleY="-1"/>
+                                </TextBlock.RenderTransform>
+                </TextBlock>
+                
+                        </Canvas>
+                    </Canvas>
             </ZoomAndPan:ZoomAndPanControl>
             </ScrollViewer>
         </Grid>

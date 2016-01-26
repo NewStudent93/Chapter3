@@ -61,6 +61,8 @@
     <Compile Include="Default.xaml.cs">
       <DependentUpon>Default.xaml</DependentUpon>
     </Compile>
+    <Compile Include="drawCoordinateSystem.cs" />
+    <Compile Include="MouseHandlingMode.cs" />
     <Compile Include="RotateTransforms.xaml.cs">
       <DependentUpon>RotateTransforms.xaml</DependentUpon>
     </Compile>
@@ -73,6 +75,7 @@
     <Compile Include="TranslateTransforms.xaml.cs">
       <DependentUpon>TranslateTransforms.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ZoomAndPanEvents.cs" />
     <Page Include="CombineTransforms.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
