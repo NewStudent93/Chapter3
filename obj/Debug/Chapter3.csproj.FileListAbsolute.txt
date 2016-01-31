@@ -34,3 +34,15 @@ C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\obj\Debug\Chapter3.pdb
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\bin\Debug\ZoomAndPan.dll
 C:\Users\Bube\documents\visual studio 2015\Projects\Chapter3\Chapter3\bin\Debug\ZoomAndPan.pdb
+E:\My Documents\Documents\GitHub\Chapter3\bin\Debug\Chapter3.exe.config
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\Chapter3.csprojResolveAssemblyReference.cache
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\CombineTransforms.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\Default.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\MatrixOperations.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\MatrixTransforms.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\ScaleTransforms.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\SkewTransforms.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\TranslateTransforms.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\App.g.cs
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\Chapter3_MarkupCompile.cache
+E:\My Documents\Documents\GitHub\Chapter3\obj\Debug\Chapter3_MarkupCompile.lref
