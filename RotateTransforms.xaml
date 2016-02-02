@@ -16,11 +16,11 @@
             <StackPanel Grid.Column="0">
                 <TextBlock HorizontalAlignment="Center" Margin="10,10,10,0" TextWrapping="Wrap" FontSize="14" FontWeight="Bold" Text="Rotation Animation"/>
                 <TextBlock Margin="10,10,10,0" TextWrapping="Wrap" Height="46" Text="The rotation angle is animated from 0 to 360, and the center property can be set by click"/>
-                <Border Margin="10" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left">
+                <Border Margin="10" BorderBrush="Black" BorderThickness="1"  HorizontalAlignment="Left" Width="240" Height="270">
                     <ScrollViewer
                 x:Name="scroller"
                 CanContentScroll="True"
-                VerticalScrollBarVisibility="Auto"
+                VerticalScrollBarVisibility="Visible"
                 HorizontalScrollBarVisibility="Visible"
                 Grid.Column="1"
                 >

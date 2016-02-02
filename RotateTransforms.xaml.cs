@@ -90,6 +90,14 @@ namespace Chapter3
         private void zoomAndPanControl_MouseWheel(object sender, MouseWheelEventArgs e)
         {
             ZoomAndPanEvents.MouseWheel(sender, e, zoomAndPanControl,canvas1);
+
+            if (zoomAndPanControl.ContentScale < 1)
+            {
+                canvas1.Width = zoomAndPanControl.ContentViewportWidth;
+                canvas1.Height = zoomAndPanControl.ContentViewportHeight;
+                zoomAndPanControl.ContentOffsetX = 0;
+                zoomAndPanControl.ContentOffsetY = 0;
+            }
         }
 
 

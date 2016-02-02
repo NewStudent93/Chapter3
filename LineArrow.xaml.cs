@@ -67,7 +67,7 @@ namespace Chapter3
             v1.Normalize();
             v1 *= length;
             line2 = new Line();
-            line2.Stroke = Brushes.Red;
+            line2.Stroke = Brushes.Gray;
             line2.StrokeThickness = 4;
             line2.StrokeEndLineCap = PenLineCap.Square;
         //    line2.StrokeDashArray = DoubleCollection.Parse("3, 1");
@@ -82,7 +82,7 @@ namespace Chapter3
             canvas1.Children.Add(line2);
 
             line3 = new Line();
-            line3.Stroke = Brushes.Green;
+            line3.Stroke = Brushes.Gray;
             line3.StrokeThickness = 4;
             line3.StrokeStartLineCap = PenLineCap.Square;
             line3.X1 = pt2.X;
